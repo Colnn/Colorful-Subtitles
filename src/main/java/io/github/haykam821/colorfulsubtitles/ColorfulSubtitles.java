@@ -51,8 +51,8 @@ public final class ColorfulSubtitles {
 			new Gson().toJson(result.get().left().get(), writer);
 			writer.close();
 			return true;
-        } catch (IOException e) {
-            LOGGER.warn("Could not save Colorful Subtitles config.");
+        } catch (Exception e) {
+            LOGGER.warn("Could not save Colorful Subtitles config.", e);
         }
 
 		return false;

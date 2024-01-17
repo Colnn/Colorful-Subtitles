@@ -84,4 +84,13 @@ public final class ColorfulSubtitles {
 
 		return ColorfulSubtitlesConfig.DEFAULT;
 	}
+
+	public static boolean checkClothConfig() {
+		try {
+			Class.forName("me.shedaniel.autoconfig.AutoConfig");
+			return true;
+		} catch (ClassNotFoundException e) {
+			return false;
+		}
+	}
 }

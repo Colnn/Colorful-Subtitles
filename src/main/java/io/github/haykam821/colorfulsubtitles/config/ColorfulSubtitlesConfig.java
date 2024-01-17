@@ -11,7 +11,7 @@ import net.minecraft.text.TextColor;
 import net.minecraft.util.Formatting;
 
 public class ColorfulSubtitlesConfig {
-	private static final Map<SoundCategory, TextColor> DEFAULT_COLORS = ImmutableMap.<SoundCategory, TextColor>builder()
+	public static final Map<SoundCategory, TextColor> DEFAULT_COLORS = ImmutableMap.<SoundCategory, TextColor>builder()
 		.put(SoundCategory.MUSIC, TextColor.fromFormatting(Formatting.DARK_PURPLE))
 		.put(SoundCategory.RECORDS, TextColor.fromFormatting(Formatting.DARK_RED))
 		.put(SoundCategory.WEATHER, TextColor.fromFormatting(Formatting.AQUA))
@@ -34,10 +34,10 @@ public class ColorfulSubtitlesConfig {
 		).apply(instance, ColorfulSubtitlesConfig::new);
 	});
 
-	private final Map<SoundCategory, TextColor> colors;
+	public final Map<SoundCategory, TextColor> colors;
 	private final TextColor defaultColor;
 
-	private ColorfulSubtitlesConfig(Map<SoundCategory, TextColor> colors, TextColor defaultColor) {
+	public ColorfulSubtitlesConfig(Map<SoundCategory, TextColor> colors, TextColor defaultColor) {
 		this.colors = colors;
 		this.defaultColor = defaultColor;
 	}
